@@ -4,30 +4,50 @@ import Button from './Button'
 export default class ButtonPanel extends React.Component {
   render() {
     const buttons = {
-      group1: ['AC', '+/-', '%','%'],
+      group1: ['AC', '+/-', '%','/'],
       group2: ['7','8','9','X'],
       group3: ['4','5','6','-'],
       group4: ['1','2','3','+'],
       group5: ['0','.','=']
     }
+
+    const buttonGroup1 = buttons.group1.map((x) => {
+      return <Button keys={x} name={x} />
+    })
+
+    const buttonGroup2 = buttons.group2.map((x) => {
+      return <Button keys={x} name={x} />
+    })
+
+    const buttonGroup3 = buttons.group3.map((x) => {
+      return <Button keys={x} name={x} />
+    })
+
+    const buttonGroup4 = buttons.group4.map((x) => {
+      return <Button keys={x} name={x} />
+    })
+
+    const buttonGroup5 = buttons.group5.map((x) => {
+      return <Button keys={x} name={x} />
+    })
+
     return (
     <div>
       <div className="group">
-        {buttons.group1.map((x) => <Button name={x} />)}
+        {buttonGroup1}
       </div>
       <div className="group">
-        {buttons.group2.map((x) => <Button name={x} />)}
+        {buttonGroup2}
       </div>
       <div className="group">
-        {buttons.group3.map((x) => <Button name={x} />)}
+        {buttonGroup3}
       </div>
       <div className="group">
-        {buttons.group4.map((x) => <Button name={x} />)}
+        {buttonGroup4}
       </div>
       <div className="group">
-        {buttons.group5.map((x) => <Button name={x} />)}
+        {buttonGroup5}
       </div>
-
     </div>
     )
   }

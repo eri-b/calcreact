@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './display.css'
 
 export default class Display extends React.Component {
   render() {
     return (
-        <div>Result: { this.props.result}</div>
+        <div id="display">{ this.props.result}</div>
     )
   }
 }

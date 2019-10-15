@@ -1,0 +1,11 @@
+#display{
+  height:100px;
+  background:darkgray;
+  color:white;
+  font-weight:bold;
+  text-align:right;
+  padding:20px;
+  font-size:40px;
+  box-sizing:border-box;
+  border:1px solid white;
+}

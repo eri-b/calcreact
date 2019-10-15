@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import './buttonpanel.css'
 
 export default class ButtonPanel extends React.Component {
   render() {
@@ -10,25 +11,63 @@ export default class ButtonPanel extends React.Component {
       group4: ['1','2','3','+'],
       group5: ['0','.','=']
     }
+    const gray = "#ccc"
 
-    const buttonGroup1 = buttons.group1.map((x) => {
-      return <Button keys={x} name={x} />
+    const buttonGroup1 = buttons.group1.map((x, i) => {
+      const last = i === 3 ? true : false
+      return (
+        <Button
+          keys={x}
+          name={x}
+          color={!last && gray}
+          />
+        )
     })
 
-    const buttonGroup2 = buttons.group2.map((x) => {
-      return <Button keys={x} name={x} />
+    const buttonGroup2 = buttons.group2.map((x, i) => {
+      const last = i === 3 ? true : false
+      return (
+        <Button
+          keys={x}
+          name={x}
+          color={!last && gray}
+          />
+        )
     })
 
-    const buttonGroup3 = buttons.group3.map((x) => {
-      return <Button keys={x} name={x} />
+    const buttonGroup3 = buttons.group3.map((x, i) => {
+      const last = i === 3 ? true : false
+      return (
+        <Button
+          keys={x}
+          name={x}
+          color={!last && gray}
+          />
+        )
     })
 
-    const buttonGroup4 = buttons.group4.map((x) => {
-      return <Button keys={x} name={x} />
+    const buttonGroup4 = buttons.group4.map((x, i) => {
+      const last = i === 3 ? true : false
+      return (
+        <Button
+          keys={x}
+          name={x}
+          color={!last && gray}
+          />
+        )
     })
 
-    const buttonGroup5 = buttons.group5.map((x) => {
-      return <Button keys={x} name={x} />
+    const buttonGroup5 = buttons.group5.map((x, i) => {
+      const last = i === 2 ? true : false
+      const first = i === 0 ? true : false
+      return (
+        <Button
+          keys={x}
+          name={x}
+          color={!last && gray}
+          wide={first && true}
+          />
+        )
     })
 
     return (

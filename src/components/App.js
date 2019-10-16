@@ -6,6 +6,14 @@ import calculate from '../logic/calculate.js'
 import '../css/app.css'
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      total: null,
+      next: null,
+      operation: null
+    }
+  }
   render(){
 
     return (

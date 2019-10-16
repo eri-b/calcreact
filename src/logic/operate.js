@@ -2,14 +2,21 @@
 import Big from 'big.js'
 
 const operate = (numberOne, numberTwo, operation) => {
-  if (operation === "-") {
-    return (Big(numberTwo) - Big(numberOne))
-  } else if (operation === "X"){
-    return (Big(numberTwo) * Big(numberOne))
-  } else if (operation === "/"){
-    return (Big(numberTwo) / Big(numberOne))
-  } else if (operation === "+"){
-    return (Big(numberTwo) + Big(numberOne))
+
+  switch(operation){
+    case "-":
+      return (Big(numberTwo) - Big(numberOne))
+    case "X":
+      return (Big(numberTwo) * Big(numberOne))
+    case "/":
+      if (Big(numberOne) !== 0) {
+        return (Big(numberTwo) / Big(numberOne))
+      }
+    break
+    case "+":
+      return (Big(numberTwo) + Big(numberOne))
+    default:
+      console.log('something went wrong')
   }
 }
 

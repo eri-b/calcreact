@@ -3,6 +3,11 @@ import Button from './Button'
 import '../css/buttonpanel.css'
 
 export default class ButtonPanel extends React.Component {
+
+  handleClick(){
+
+  }
+  
   render() {
     const buttons = {
       group1: ['AC', '+/-', '%','/'],

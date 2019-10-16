@@ -17,7 +17,7 @@ const calculate = (data, button) => {
     case "/":
     case "+":
     case "-":
-      data.total = operate(data.total, data.next, button)
+      data.total = operate(data.next, data.total, button)
     break
     default:
       console.log('something has gone wrong')

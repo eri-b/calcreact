@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class Display extends React.Component {
   render() {
@@ -9,3 +10,4 @@ export default class Display extends React.Component {
 }
 
 Display.defaultProps = {result: "0"}
+Display.propTypes = { result: PropTypes.string }

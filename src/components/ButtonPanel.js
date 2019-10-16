@@ -17,7 +17,7 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           />
@@ -28,7 +28,7 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           />
@@ -39,7 +39,7 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           />
@@ -50,7 +50,7 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           />
@@ -62,7 +62,7 @@ export default class ButtonPanel extends React.Component {
       const first = i === 0 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           wide={first && true}

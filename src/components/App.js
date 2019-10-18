@@ -13,6 +13,7 @@ export default class App extends React.Component {
       next: null,
       operation: null
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(buttonName){
@@ -25,7 +26,7 @@ export default class App extends React.Component {
     return (
       <div id="calc">
         <Display result={this.state.total}/>
-        <ButtonPanel clickHandler={this.handleClick()}/>
+        <ButtonPanel clickHandler={this.handleClick}/>
       </div>
     )
   }

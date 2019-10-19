@@ -5,17 +5,18 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch(operation){
     case "-":
-      return (Big(numberTwo) - Big(numberOne))
+      return (Big(numberOne).minus(numberTwo).toString())
     case "X":
-      return (Big(numberTwo) * Big(numberOne))
+      return (Big(numberOne).times(numberTwo).toString())
     case "/":
-      if (Big(numberOne) !== 0) {
-        return (Big(numberTwo) / Big(numberOne))
+      if (Big(numberTwo) !== 0) {
+        return (Big(numberOne).div(numberTwo).toString())
       }
     break
     case "+":
-      return (Big(numberTwo) + Big(numberOne))
+      return (Big(numberOne).plus(numberTwo).toString())
     default:
+      console.log(operation)
       console.log('something went wrong')
   }
 }

@@ -8,25 +8,26 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      total: "0",
-      next: "0",
-      operation: null
+      total: null,
+      next: null,
+      operation: null,
+      last: null
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(buttonName){
-      alert(buttonName)
+
       const data = calculate(this.state, buttonName)
-      // console.log(data)
       this.setState(data)
+      console.log(this.state)
   }
 
   render(){
 
     return (
       <div id="calc">
-        <Display result={this.state.next}/>
+        <Display result={this.state.total}/>
         <ButtonPanel clickHandler={this.handleClick}/>
       </div>
     )

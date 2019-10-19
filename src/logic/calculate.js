@@ -1,7 +1,7 @@
 import operate from './operate.js'
 
 const calculate = (data, button) => {
-
+  console.log(data)
   switch(button){
     case "+/-":
       data.total = data.total * -1
@@ -17,10 +17,11 @@ const calculate = (data, button) => {
     case "/":
     case "+":
     case "-":
-      data.total = operate(data.next, data.total, button)
+      // data.total = operate(data.next, data.total, button)
+      data.operation = button
     break
     default:
-      console.log('something has gone wrong')
+      data.next = button
   }
 
   return data

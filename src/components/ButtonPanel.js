@@ -3,13 +3,7 @@ import Button from './Button'
 import '../css/buttonpanel.css'
 
 export default class ButtonPanel extends React.Component {
-  consructor(props){
-    this.handleClick = this.handleClick.bind(this)
-  }
-  
-  handleClick(buttonName){
-    return this.props.clickHandler
-  }
+
 
   render() {
     const buttons = {
@@ -28,7 +22,7 @@ export default class ButtonPanel extends React.Component {
           key={x}
           name={x}
           color={!last && gray}
-          clickHandler={ this.handleClick }
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -40,7 +34,7 @@ export default class ButtonPanel extends React.Component {
           key={x}
           name={x}
           color={!last && gray}
-          clickHandler={ this.handleClick(x) }
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -52,7 +46,7 @@ export default class ButtonPanel extends React.Component {
           key={x}
           name={x}
           color={!last && gray}
-          clickHandler={ this.handleClick(x) }
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -64,7 +58,7 @@ export default class ButtonPanel extends React.Component {
           key={x}
           name={x}
           color={!last && gray}
-          clickHandler={ this.handleClick(x) }
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -78,7 +72,7 @@ export default class ButtonPanel extends React.Component {
           name={x}
           color={!last && gray}
           wide={first && true}
-          clickHandler={ this.handleClick(x) }
+          clickHandler={ this.props.clickHandler }
           />
         )
     })

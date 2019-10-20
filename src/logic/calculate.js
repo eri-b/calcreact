@@ -68,10 +68,8 @@ const error = (data, button) => {
       if (!data.total || !data.next || !data.operation){ return true}
     break
     case ".":
-      const hasDot = data.total.toString().includes('.')
-      console.log(hasDot)
-      if(!data.operation && hasDot) {return true}
-      else if(data.next.includes('.')) {return true}
+      if(!data.operation && data.total && data.total.toString().includes('.')) {return true}
+      else if (data.next && data.next.toString().includes('.')){ return true}
     break
     default:
       return false

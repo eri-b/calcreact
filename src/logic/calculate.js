@@ -4,43 +4,44 @@ const calculate = (data, button) => {
 
   switch(button){
     case "+/-":
-      data.total = data.total * -1
-      data.next = data.next * -1
+      if (!data.operation) {data.total = operate(data.total, -1, "X")}
+      else {data.next = operate(data.next, -1, "X")}
     break
     case "%":
-      data.next = data.next / 100
+      if (!data.operation) {data.total = operate(data.total, 100, "/")}
+      else {data.next = operate(data.next, 100, "/")}
+
     break
     case "AC":
       data.next = null
       data.total = null
       data.operation = null
+      data.last = "reset"
     break
     case "=":
       data.total = operate(data.total, data.next, data.operation)
       data.last = "operation"
+      data.next = null
+      data.operation = null
     break
     case "X":
     case "/":
     case "+":
     case "-":
-      if (data.total) {
+      if (data.next) {
         data.total = operate(data.total, data.next, data.operation)
-      } else {
-        data.total = data.next // copy first operand to total
+        data.next = null
       }
       data.last = "operation"
-      data.next = null // empty next operand
       data.operation = button //update for the next operation
     break
     default: //number buttons
-      if (data.last === "number"){ // concatenate
-        data.next = data.next + button
-      } else{
-        data.next = button // preceding action was an operation
-      }
+      const concat = data.last === "number"
+      if (!data.operation) { data.total = concat ? data.total + button : button }
+      else { data.next = concat ? data.next + button : button }
       data.last = "number"
   }
-  // console.log(data)
+
   return data
 }
 

@@ -16,8 +16,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case "+":
       return (Big(numberOne).plus(numberTwo).toString())
     default:
-      console.log(operation)
-      console.log('something went wrong')
+      console.log(operation + 'something went wrong')
   }
 }
 

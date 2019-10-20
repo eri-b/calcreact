@@ -1,6 +1,13 @@
 import operate from './operate.js'
 
 const calculate = (data, button) => {
+  if (error(data, button)){
+    data.total = "ERROR"
+    data.next = null
+    data.operation = null
+    data.last = "error"
+    return data
+  }
 
   switch(button){
     case "+/-":
@@ -43,6 +50,32 @@ const calculate = (data, button) => {
   }
 
   return data
+}
+
+const error = (data, button) => {
+  switch(button){
+    case "X":
+    case "/":
+    case "+":
+    case "-":
+    case "+/-":
+      if (!data.total || data.total === "ERROR"){ return true}
+      break
+    case "%":
+      if (!data.total || (!data.next && data.operation) || data.total === "ERROR"){ return true}
+    break
+    case "=":
+      if (!data.total || !data.next || !data.operation){ return true}
+    break
+    case ".":
+      const hasDot = data.total.toString().includes('.')
+      console.log(hasDot)
+      if(!data.operation && hasDot) {return true}
+      else if(data.next.includes('.')) {return true}
+    break
+    default:
+      return false
+  }
 }
 
 export default calculate

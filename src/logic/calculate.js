@@ -23,7 +23,6 @@ const calculate = (data, button) => {
     case "/":
     case "+":
     case "-":
-      
       if (data.total) {
         data.total = operate(data.total, data.next, data.operation)
       } else {

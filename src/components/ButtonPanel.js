@@ -3,6 +3,8 @@ import Button from './Button'
 import '../css/buttonpanel.css'
 
 export default class ButtonPanel extends React.Component {
+
+
   render() {
     const buttons = {
       group1: ['AC', '+/-', '%','/'],
@@ -17,9 +19,10 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -28,9 +31,10 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -39,9 +43,10 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -50,9 +55,10 @@ export default class ButtonPanel extends React.Component {
       const last = i === 3 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
+          clickHandler={ this.props.clickHandler }
           />
         )
     })
@@ -62,10 +68,11 @@ export default class ButtonPanel extends React.Component {
       const first = i === 0 ? true : false
       return (
         <Button
-          keys={x}
+          key={x}
           name={x}
           color={!last && gray}
           wide={first && true}
+          clickHandler={ this.props.clickHandler }
           />
         )
     })

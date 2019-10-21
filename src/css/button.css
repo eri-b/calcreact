@@ -1,0 +1,13 @@
+button{
+  flex:1;
+  background: #FF8A24;
+  border-color:white;
+  cursor:pointer;
+  opacity:.9;
+}
+button:hover{
+  opacity:1;
+}
+button:focus{
+  outline:0;
+}

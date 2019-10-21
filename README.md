@@ -1,5 +1,6 @@
-Calculator App built using React JS
+## Calculator App built using React JS
 
+Using [Big JS] (https://www.npmjs.com/package/big-js)
 
 [Live site](https://cal9c.herokuapp.com/)
 

@@ -1,14 +1,12 @@
-## Calculator App built using React JS
+## Calculator App
 
-Using [Big JS] (https://www.npmjs.com/package/big-js)
-
-[Live site](https://cal9c.herokuapp.com/)
+[Live Demo](https://cal9c.herokuapp.com/)
 
 
+
+Built Using ReactJS and [Big JS] (https://www.npmjs.com/package/big-js)
 
 -----------------------
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

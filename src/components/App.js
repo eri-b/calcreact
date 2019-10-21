@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      total: null,
+      total: "0",
       next: null,
       operation: null,
       last: null
@@ -19,10 +19,10 @@ export default class App extends React.Component {
   handleClick(buttonName){
       const data = calculate(this.state, buttonName)
       this.setState(data)
+
   }
 
   render(){
-
     return (
       <div id="calc">
         <Display

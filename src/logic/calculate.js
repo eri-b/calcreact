@@ -21,7 +21,7 @@ const calculate = (data, button) => {
     break
     case "AC":
       data.next = null
-      data.total = null
+      data.total = "0"
       data.operation = null
       data.last = "reset"
     break
@@ -60,12 +60,14 @@ const error = (data, button) => {
     case "-":
     case "+/-":
       if (!data.total || data.total === "ERROR"){ return true}
+      else if (data.next === "0" && data.operation === "/") { return true }
       break
     case "%":
       if (!data.total || (!data.next && data.operation) || data.total === "ERROR"){ return true}
     break
     case "=":
-      if (!data.total || !data.next || !data.operation){ return true}
+      if (!data.total || !data.next || !data.operation){ return true }
+      else if (data.next === "0" && data.operation === "/") { return true }
     break
     case ".":
       if(!data.operation && data.total && data.total.toString().includes('.')) {return true}
